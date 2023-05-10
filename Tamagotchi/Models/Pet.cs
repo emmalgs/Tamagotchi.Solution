@@ -1,10 +1,11 @@
 using System.Collections.Generic;
+// using System.Diagnostics;
 
 namespace Tamagotchi.Models
 {
   public abstract class Pet
   {
-
+    public int Id { get; set; }
     public string Name { get; set; }
     public int AmtFood { get; set; }
     public int FoodPlus { get; set; }
