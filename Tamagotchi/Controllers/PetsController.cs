@@ -34,5 +34,18 @@ namespace Tamagotchi.Controllers
       }
       return View(Pet.AllPets);
     }
+    
+    [HttpGet("/pets/{id}")]
+    public ActionResult Show(int id)
+    {
+      Pet foundPet = Pet.Find(id);
+      return View(foundPet);
+    }
+
+    [HttpPost("/pets/{id}")]
+    public ActionResult Show()
+    {
+      return View();
+    }
   }
 }
