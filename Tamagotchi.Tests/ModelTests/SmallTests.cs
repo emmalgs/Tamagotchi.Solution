@@ -24,5 +24,13 @@ namespace Tamagotchi.Tests
       int result = opal.Id;
       Assert.AreEqual(1, result);
     }
+
+    [TestMethod]
+    public void SmallConstructor_RestSetToTen_Int()
+    {
+      Small buckets = new Small("Buckets");
+      int result = buckets.Rest;
+      Assert.AreEqual(10, result);
+    }
   }
 }

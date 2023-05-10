@@ -7,12 +7,36 @@ namespace Tamagotchi.Models
 
     public string Name { get; set; }
     public int AmtFood { get; set; }
+    public int FoodPlus { get; set; }
+    public List<int> FoodMinMax { get; set; } = new List<int> { };
     public int Attention { get; set; }
+    public int AttnPlus { get; set; }
+    public List<int> AttnMinMax { get; set; } = new List<int> { };
     public int Rest { get; set; }
+    public int RestPlus { get; set; }
+    public List<int> RestMinMax { get; set; } = new List<int> { };
     public static List<Pet> AllPets { get; set; } = new List<Pet> { };
     public static void ClearAll()
     {
       AllPets.Clear();
+    }
+
+    public void Feed()
+    {
+      if (AmtFood > FoodMinMax[0] && AmtFood < FoodMinMax[1])
+      {
+        AmtFood += FoodPlus;
+        
+      }
+    }
+
+    public void Play()
+    {
+      if (Attention > AttnMinMax[0] && Attention < AttnMinMax[1])
+      {
+        Attention += AttnPlus;
+        AmtFood -= FoodPlus;
+      }
     }
   }
 }

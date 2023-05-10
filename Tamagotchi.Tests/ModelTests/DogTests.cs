@@ -24,5 +24,13 @@ namespace Tamagotchi.Tests
       int result = pi.Id;
       Assert.AreEqual(1, result);
     }
+
+    [TestMethod]
+    public void DogConstructor_RestMaxSetToTen_Int()
+    {
+      Dog buck = new Dog("Buck");
+      int result = buck.RestMinMax[1];
+      Assert.AreEqual(10, result);
+    }
   }
 }

@@ -1,4 +1,4 @@
-// using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace Tamagotchi.Models
 {
@@ -8,6 +8,18 @@ namespace Tamagotchi.Models
     public Cat(string name)
     {
       Name = name;
+
+      AmtFood = 5;
+      FoodMinMax.Add(0);
+      FoodMinMax.Add(10);
+      FoodPlus = 3;
+      Attention = 10;
+      AttnMinMax.Add(-10);
+      AttnMinMax.Add(10);
+      Rest = 17;
+      RestMinMax.Add(0);
+      RestMinMax.Add(20);
+
       AllPets.Add(this);
       Id = AllPets.Count;
     }

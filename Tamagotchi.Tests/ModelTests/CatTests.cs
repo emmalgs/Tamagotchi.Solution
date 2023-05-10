@@ -24,5 +24,13 @@ namespace Tamagotchi.Tests
       int result = berli.Id;
       Assert.AreEqual(1, result);
     }
+
+    [TestMethod]
+    public void CatConstructor_AttentionMinSetToNegativeInt_Int()
+    {
+      Cat lilMan = new Cat("Lil Man");
+      int result = lilMan.AttnMinMax[0];
+      Assert.AreEqual(-10, result);
+    }
   }
 }

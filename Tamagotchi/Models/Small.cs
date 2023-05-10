@@ -8,6 +8,18 @@ namespace Tamagotchi.Models
     public Small(string name)
     {
       Name = name;
+
+      AmtFood = 5;
+      FoodMinMax.Add(0);
+      FoodMinMax.Add(5);
+      FoodPlus = 1;
+      Attention = 15;
+      AttnMinMax.Add(0);
+      AttnMinMax.Add(15);
+      Rest = 10;
+      RestMinMax.Add(0);
+      RestMinMax.Add(10);
+
       AllPets.Add(this);
       Id = AllPets.Count;
     }
