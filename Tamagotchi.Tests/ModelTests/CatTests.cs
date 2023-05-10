@@ -21,7 +21,7 @@ namespace Tamagotchi.Tests
     public void CatConstructor_CreatesInstanceOfCatWithUniqueId_Int()
     {
       Cat berli = new Cat("Berli");
-      int result = 0;
+      int result = berli.Id;
       Assert.AreEqual(1, result);
     }
   }
