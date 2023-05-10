@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Tamagotchi.Models;
+using System;
 
 namespace Tamagotchi.Tests
 {
@@ -10,8 +11,9 @@ namespace Tamagotchi.Tests
     [TestMethod]
     public void PetConstructor_CreatesInstanceOfTypePet_Pet()
     {
-      Pet bukerio = new Pet();
-      Assert.AreEqual(typeof(Pet), bukerio.GetType());
+      Cat bukerio = new Cat();
+      bool expected = true;
+      Assert.AreEqual(expected, (bukerio is Pet));
     }
   }
 }
