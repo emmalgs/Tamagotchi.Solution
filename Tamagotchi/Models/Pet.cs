@@ -26,7 +26,8 @@ namespace Tamagotchi.Models
       if (AmtFood > FoodMinMax[0] && AmtFood < FoodMinMax[1])
       {
         AmtFood += FoodPlus;
-        
+        Rest -= RestPlus;
+        Attention ++;
       }
     }
 

@@ -32,5 +32,14 @@ namespace Tamagotchi.Tests
       int result = lilMan.AttnMinMax[0];
       Assert.AreEqual(-10, result);
     }
+
+    [TestMethod]
+    public void FeedMethod_IncreasesAmtFoodAndDecreasesRest_Int()
+    {
+      Cat emma = new Cat("Emma");
+      emma.Feed();
+      int result = emma.AmtFood;
+      Assert.AreEqual(8, result);
+    }
   }
 }
