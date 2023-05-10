@@ -11,7 +11,7 @@ namespace Tamagotchi.Tests
     [TestMethod]
     public void PetConstructor_CreatesInstanceOfTypePet_Pet()
     {
-      Cat bukerio = new Cat();
+      Cat bukerio = new Cat("Bukerio");
       bool expected = true;
       Assert.AreEqual(expected, (bukerio is Pet));
     }
