@@ -16,9 +16,11 @@ namespace Tamagotchi.Models
       Attention = 10;
       AttnMinMax.Add(-10);
       AttnMinMax.Add(10);
+      AttnPlus = 4;
       Rest = 17;
       RestMinMax.Add(0);
       RestMinMax.Add(20);
+      RestPlus = 2;
 
       AllPets.Add(this);
       Id = AllPets.Count;

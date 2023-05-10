@@ -39,5 +39,12 @@ namespace Tamagotchi.Models
         AmtFood -= FoodPlus;
       }
     }
+
+    public void Sleep()
+    {
+      Rest = RestMinMax[1];
+      AmtFood -= FoodPlus;
+      Attention -= AttnPlus;
+    }
   }
 }
