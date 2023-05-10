@@ -2,10 +2,10 @@
 
 namespace Tamagotchi.Models
 {
-  public class Cat : Pet
+  public class Dog : Pet
   {
     public int Id { get; }
-    public Cat(string name)
+    public Dog(string name)
     {
       Name = name;
       AllPets.Add(this);
