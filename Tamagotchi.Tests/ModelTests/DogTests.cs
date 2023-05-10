@@ -40,6 +40,14 @@ namespace Tamagotchi.Tests
       int result = popRock.Attention;
       Assert.AreEqual(10, result);
     }
-
+    
+    [TestMethod]
+    public void SleepMethod_SetsRestToMaxAndDecreasesAmtFoodAndAttention_Int()
+    {
+      Dog medusa = new Dog("Medusa");
+      medusa.Sleep();
+      int result = medusa.Rest;
+      Assert.AreEqual(10, result);
+    }
   }
 }
