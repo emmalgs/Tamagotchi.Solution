@@ -14,6 +14,7 @@ namespace Tamagotchi.Models
       FoodMinMax.Add(20);
       FoodPlus = 2;
       Attention = 5;
+      AttnPlus = 5;
       AttnMinMax.Add(0);
       AttnMinMax.Add(20);
       Rest = 2;

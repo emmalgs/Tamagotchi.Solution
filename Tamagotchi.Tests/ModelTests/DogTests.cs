@@ -32,5 +32,14 @@ namespace Tamagotchi.Tests
       int result = buck.RestMinMax[1];
       Assert.AreEqual(10, result);
     }
+    [TestMethod]
+    public void PlayMethod_IncreasesAttentionAndDecreasesAmtFood_Int()
+    {
+      Dog popRock = new Dog("PopRock");
+      popRock.Play();
+      int result = popRock.Attention;
+      Assert.AreEqual(10, result);
+    }
+
   }
 }
