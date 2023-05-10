@@ -32,5 +32,15 @@ namespace Tamagotchi.Tests
       int result = buckets.Rest;
       Assert.AreEqual(10, result);
     }
+
+    [TestMethod]
+    public void AllAnimals_AddsAnimalsToList_Int()
+    {
+      Small buckets = new Small("Buckets");
+      Dog doggie = new Dog("Doggie");
+      Cat cattie = new Cat("Cattie");
+      string result = Small.AllPets[1].Name;
+      Assert.AreEqual("Doggie", result);
+    }
   }
 }
