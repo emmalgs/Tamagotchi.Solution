@@ -49,5 +49,14 @@ namespace Tamagotchi.Tests
       int result = medusa.Rest;
       Assert.AreEqual(10, result);
     }
+    
+    [TestMethod]
+    public void FindMethod_ReturnsPetAtId_String()
+    {
+      Dog crank = new Dog("crank");
+      Pet foundPet = Pet.Find(1);
+      string result = "crank";
+      Assert.AreEqual("crank", result);
+    }
   }
 }

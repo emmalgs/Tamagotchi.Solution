@@ -47,5 +47,10 @@ namespace Tamagotchi.Models
       AmtFood -= FoodPlus;
       Attention -= AttnPlus;
     }
+
+    public static Pet Find(int searchId)
+    {
+      return AllPets[searchId - 1];
+    }
   }
 }
