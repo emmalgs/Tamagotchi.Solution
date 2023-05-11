@@ -1,0 +1,56 @@
+:root {
+  --mint: #99D19C;
+  --orange: #EE6123;
+  --purp: #CFCFEA;
+  --blue: #143642;
+  --yellow: #EC9A29;
+}
+
+body {
+  background-color: var(--purp);
+  color: var(--blue);
+}
+
+.homepg-h1 {
+  background-color: var(--orange);
+  width: 300px;
+  margin: auto;
+  margin-top: 20px;
+}
+h1 {
+  text-align: center;
+  margin: 10px;
+}
+
+.btn {
+  border: 1px solid var(--blue);
+  margin: 3px;
+}
+
+.homePgBtn{
+  width: 300px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#header {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-img {
+  width: 600px;
+  margin: auto;
+}
+
+#footer {
+  position: fixed;
+  width: 100vw;
+  text-align: center;
+  bottom: 20px;
+  /* margin-left: 20px; */
+  color: white;
+  background-color: #143642;
+}
