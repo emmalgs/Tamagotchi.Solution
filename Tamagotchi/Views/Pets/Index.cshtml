@@ -8,15 +8,14 @@
     {
       <p>You have no pets yet.</p>
     }
-    <ul>
+    <div class="pet-cage">
     @foreach (Pet pet in Model)
     {
-      <li><a href="/pets/@pet.Id">@pet.Name</a></li>
+      <div class="pet-card"><a href="/pets/@pet.Id">@pet.Name</a></div>
     }
-
-    </ul>
-    <a href="/pets/new">Add a new pet.</a>
+    </div>
+    <a class="btn" href="/pets/new">Add a new pet</a>
 
     <form action="/pets/delete" method="post">
-      <button type="submit" name="button">Clear All Pets</button>
+      <button class="btn" type="submit" name="button">Clear All Pets</button>
     </form>

@@ -1,22 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;1,100;1,200&display=swap');
+
 :root {
   --mint: #99D19C;
   --orange: #EE6123;
   --purp: #CFCFEA;
   --blue: #143642;
   --yellow: #EC9A29;
+  --font: "Josefin Sans";
 }
 
 body {
+  font-family: var(--font), monospace;
   background-color: var(--purp);
   color: var(--blue);
 }
 
-.homepg-h1 {
+#navbar { 
+  display: flex;
+  width: 100vw;
+  justify-content: space-evenly;
   background-color: var(--orange);
+  padding: 5px;
+  margin: 7px;
+}
+
+
+#navbar>a {
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  background-color: var(--yellow);
+  padding: 4px;
+  border-radius: 6px;
+  width: 100px;
+}
+
+.newFields {
+  border: none;
+  border-radius: 6px;
+  background-color: var(--purp);
+}
+
+#type {
+  padding: 6px;
+}
+
+#newForm {
+  background-color: var(--mint);
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px solid var(--blue);
+  display: flex;
+  flex-direction: column;
   width: 300px;
   margin: auto;
   margin-top: 20px;
+  gap: 10px;
 }
+
 h1 {
   text-align: center;
   margin: 10px;
@@ -38,6 +79,11 @@ h1 {
 #header {
   display: flex;
   flex-direction: column;
+}
+#header h1 {
+  position: fixed;
+  top: 120px;
+  left: 45vw;
 }
 
 .header-img {

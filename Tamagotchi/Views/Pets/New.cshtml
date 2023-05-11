@@ -1,14 +1,15 @@
 @{
   Layout = "_Layout";
 }
-    <form action="/pets" method="post">
+    <form id="newForm" action="/pets" method="post">
       <label for="type">Select Pet Type: </label>
-      <select id="type" name="info" required>
+      <select class="newFields" id="type" name="info" required>
+        <option selected="true" disabled="disabled">Please Select a Kind of Pet</option>
         <option value="cat">Cat</option>
         <option value="dog">Dog</option>
         <option value="small">Small Pet</option>
       </select>
       <label for="name">Pet name: </label>
-      <input id="name" name="info" type="text">
+      <input class="newFields" id="name" name="info" type="text">
       <button class="btn" type="submit">Submit</button>
     </form>
