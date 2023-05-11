@@ -80,6 +80,7 @@ h1 {
   display: flex;
   flex-direction: column;
 }
+
 #header h1 {
   position: fixed;
   top: 120px;
@@ -88,6 +89,40 @@ h1 {
 
 .header-img {
   width: 600px;
+  margin: auto;
+}
+
+.pet-cage {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 40px;
+  width: 100vw;
+}
+
+.pet-card {
+  width: 400px;
+  height: 400px;
+  background-color: var(--yellow);
+  border-radius: 6px;
+  padding: 10px;
+  text-align: center;
+}
+
+/* #pet-name {
+  position: fixed;
+  margin-top: 10px;
+} */
+
+.pet-card a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 20px;
+  color: var(--blue);
+}
+
+.squirt {
+  width: 300px;
   margin: auto;
 }
 

@@ -11,11 +11,31 @@
     <div class="pet-cage">
     @foreach (Pet pet in Model)
     {
-      <div class="pet-card"><a href="/pets/@pet.Id">@pet.Name</a></div>
+      <div class="pet-card"><a href="/pets/@pet.Id" id="pet-name">@pet.Name</a>
+      @if (pet.GetType() == typeof(Cat))
+      {
+        <img src="~/img/cat.png">
+      }
+      else if(pet.GetType() == typeof(Dog))
+      {
+        <img src="~/img/dog.png">
+      }
+      else
+      {
+        <img src="~/img/smallguy.png">
+      }
+      <form action="/pets" method="post">
+        <input id="petId" name="info" type="hidden" value="@pet.Id">
+        <input id="action" name="info" type="hidden" value="delete-pet">
+        <button class="btn" type="submit">&#10005;</button>
+      </form>
+      </div>
     }
     </div>
-    <a class="btn" href="/pets/new">Add a new pet</a>
+    <div class="squirt">
+      <a class="btn" href="/pets/new">Add a new pet</a>
 
-    <form action="/pets/delete" method="post">
-      <button class="btn" type="submit" name="button">Clear All Pets</button>
-    </form>
+      <form action="/pets/delete" method="post">
+        <button class="btn" type="submit" name="button">Clear All Pets</button>
+      </form>
+    </div>

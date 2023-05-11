@@ -12,7 +12,7 @@ namespace Tamagotchi.Controllers
     }
 
     [HttpGet("/pets/new")]
-    public ActionResult New()
+    public ActionResult Create()
     {
       return View();
     }
@@ -20,7 +20,12 @@ namespace Tamagotchi.Controllers
     [HttpPost("/pets")]
     public ActionResult Index(string[] info)
     {
-      if (info[0] == "cat")
+      if (info[1] == "delete-pet")
+      {
+        Pet foundPet = Pet.Find(int.Parse(info[0]));
+        Pet.AllPets.Remove(foundPet);
+      }
+      else if (info[0] == "cat")
       {
         Cat newCat = new Cat(info[1]);
       }
@@ -59,6 +64,14 @@ namespace Tamagotchi.Controllers
         foundPet.Sleep();
       }
       return View(foundPet);
+    }
+
+
+    [HttpPost("/pets/delete")]
+    public ActionResult DeleteAll()
+    {
+      Pet.ClearAll();
+      return View();
     }
   }
 }

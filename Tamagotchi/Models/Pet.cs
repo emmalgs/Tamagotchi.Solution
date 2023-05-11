@@ -7,7 +7,7 @@ namespace Tamagotchi.Models
   public abstract class Pet
   {
     public Timer TimePass { get; set; }
-    public int Id { get; set; }
+    public int Id { get; set; } = 0;
     public string Name { get; set; }
     public int AmtFood { get; set; }
     public int FoodPlus { get; set; }
@@ -24,13 +24,19 @@ namespace Tamagotchi.Models
       AllPets.Clear();
     }
 
+    public int AssignId()
+    {
+      Id++;
+      return Id;
+    }
+
     public void Feed()
     {
       if (AmtFood > FoodMinMax[0] && AmtFood < FoodMinMax[1])
       {
         AmtFood += FoodPlus;
         Rest -= RestPlus;
-        Attention ++;
+        Attention++;
       }
     }
 
