@@ -1,10 +1,12 @@
 using System.Collections.Generic;
+using System.Timers;
 // using System.Diagnostics;
 
 namespace Tamagotchi.Models
 {
   public abstract class Pet
   {
+    public Timer TimePass { get; set; }
     public int Id { get; set; }
     public string Name { get; set; }
     public int AmtFood { get; set; }
@@ -51,6 +53,13 @@ namespace Tamagotchi.Models
     public static Pet Find(int searchId)
     {
       return AllPets[searchId - 1];
+    }
+
+    public void DecrementTimerElapsed(object sender, ElapsedEventArgs e)
+    {
+      AmtFood--;
+      Attention--;
+      Rest--;
     }
   }
 }

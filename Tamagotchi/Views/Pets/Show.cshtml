@@ -18,7 +18,21 @@
   </ul>
 
   <form action="/pets/@Model.Id" method="post">
+    <input id="petId" name="petId" type="hidden" value="@Model.Id">
+    <input id="action" name="action" type="hidden" value="feed">
     <button type="submit">Feed</button>
+  </form>
+
+  <form action="/pets/@Model.Id" method="post">
+    <input id="petId" name="petId" type="hidden" value="@Model.Id">
+    <input id="action" name="action" type="hidden" value="play">
+    <button type="submit">Play</button>
+  </form>
+
+  <form action="/pets/@Model.Id" method="post">
+    <input id="petId" name="petId" type="hidden" value="@Model.Id">
+    <input id="action" name="action" type="hidden" value="sleep">
+    <button type="submit">Sleep</button>
   </form>
 
 </body>

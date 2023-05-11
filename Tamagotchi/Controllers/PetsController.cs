@@ -43,9 +43,22 @@ namespace Tamagotchi.Controllers
     }
 
     [HttpPost("/pets/{id}")]
-    public ActionResult Show()
+    public ActionResult Show(int petId, string action)
     {
-      return View();
+      Pet foundPet = Pet.Find(petId);
+      if (action == "feed")
+      {
+        foundPet.Feed();
+      }
+      else if(action == "play")
+      {
+        foundPet.Play();
+      }
+      else
+      {
+        foundPet.Sleep();
+      }
+      return View(foundPet);
     }
   }
 }

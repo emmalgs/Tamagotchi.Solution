@@ -1,4 +1,5 @@
-// using System.Collections.Generic;
+using System.Timers;
+using System;
 
 namespace Tamagotchi.Models
 {
@@ -7,6 +8,11 @@ namespace Tamagotchi.Models
     public Small(string name)
     {
       Name = name;
+
+      TimePass = new Timer(TimeSpan.FromMinutes(1).TotalMilliseconds);
+      TimePass.Elapsed += DecrementTimerElapsed;
+      TimePass.AutoReset = true;
+      TimePass.Start();
 
       AmtFood = 5;
       FoodMinMax.Add(0);
