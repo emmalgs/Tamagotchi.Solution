@@ -28,7 +28,7 @@ namespace Tamagotchi.Models
       RestPlus = 2;
 
       AllPets.Add(this);
-      Id = AssignId();
+      Id = AllPets.Count;
     }
   }
 }
