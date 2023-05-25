@@ -1,4 +1,3 @@
-// using System.Collections.Generic;
 using  System.Timers;
 using System;
 
@@ -11,25 +10,23 @@ namespace Tamagotchi.Models
       Name = name;
 
       TimePass = new Timer(TimeSpan.FromMinutes(1).TotalMilliseconds);
-      TimePass.Elapsed += DecrementTimerElapsed;
+      // TimePass.Elapsed += DecrementTimerElapsed;
       TimePass.AutoReset = true;
       TimePass.Start();
 
       AmtFood = 20;
-      FoodMinMax.Add(0);
-      FoodMinMax.Add(20);
+      FoodMin = 0;
+      FoodMax = 20;
       FoodPlus = 2;
       Attention = 5;
-      AttnMinMax.Add(0);
-      AttnMinMax.Add(20);
+      AttnMin = 0;
+      AttnMax = 20;
       AttnPlus = 5;
       Rest = 2;
-      RestMinMax.Add(0);
-      RestMinMax.Add(10);
+      RestMin = 0;
+      RestMax = 10;
       RestPlus = 1;
-
-      AllPets.Add(this);
-      Id = AllPets.Count;
+      Type = "dog";
     }
   }
 }

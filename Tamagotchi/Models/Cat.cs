@@ -15,20 +15,18 @@ namespace Tamagotchi.Models
       TimePass.Start();
 
       AmtFood = 5;
-      FoodMinMax.Add(0);
-      FoodMinMax.Add(10);
+      FoodMin = 0;
+      FoodMax = 10;
       FoodPlus = 3;
       Attention = 10;
-      AttnMinMax.Add(-10);
-      AttnMinMax.Add(10);
+      AttnMin = -10;
+      AttnMax = 10;
       AttnPlus = 4;
       Rest = 17;
-      RestMinMax.Add(0);
-      RestMinMax.Add(20);
+      RestMin = 0;
+      RestMax = 20;
       RestPlus = 2;
-
-      AllPets.Add(this);
-      Id = AllPets.Count;
+      Type = "cat";
     }
   }
 }

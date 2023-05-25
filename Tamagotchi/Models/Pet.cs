@@ -1,38 +1,29 @@
-using System.Collections.Generic;
 using System.Timers;
-// using System.Diagnostics;
 
 namespace Tamagotchi.Models
 {
   public abstract class Pet
   {
+    public int PetId { get; set; }
     public Timer TimePass { get; set; }
-    public int Id { get; set; }
     public string Name { get; set; }
     public int AmtFood { get; set; }
     public int FoodPlus { get; set; }
-    public List<int> FoodMinMax { get; set; } = new List<int> { };
+    public int FoodMin { get; set; }
+    public int FoodMax { get; set; }
     public int Attention { get; set; }
     public int AttnPlus { get; set; }
-    public List<int> AttnMinMax { get; set; } = new List<int> { };
+    public int AttnMin { get; set; }
+    public int AttnMax { get; set; }
     public int Rest { get; set; }
     public int RestPlus { get; set; }
-    public List<int> RestMinMax { get; set; } = new List<int> { };
-    public static List<Pet> AllPets { get; set; } = new List<Pet> { };
-    public static void ClearAll()
-    {
-      AllPets.Clear();
-    }
-
-    // public int AssignId()
-    // {
-    //   Id++;
-    //   return Id;
-    // }
+    public int RestMin { get; set; }
+    public int RestMax { get; set; }
+    public string Type { get; set; }
 
     public void Feed()
     {
-      if (AmtFood > FoodMinMax[0] && AmtFood < FoodMinMax[1])
+      if (AmtFood > FoodMin && AmtFood < FoodMax)
       {
         AmtFood += FoodPlus;
         Rest -= RestPlus;
@@ -42,23 +33,17 @@ namespace Tamagotchi.Models
 
     public void Play()
     {
-      if (Attention > AttnMinMax[0] && Attention < AttnMinMax[1])
+      if (Attention > AttnMin && Attention < AttnMax)
       {
         Attention += AttnPlus;
         AmtFood -= FoodPlus;
       }
     }
-
     public void Sleep()
     {
-      Rest = RestMinMax[1];
+      Rest = RestMax;
       AmtFood -= FoodPlus;
       Attention -= AttnPlus;
-    }
-
-    public static Pet Find(int searchId)
-    {
-      return AllPets[searchId - 1];
     }
 
     public void DecrementTimerElapsed(object sender, ElapsedEventArgs e)

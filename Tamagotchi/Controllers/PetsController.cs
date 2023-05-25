@@ -1,76 +1,64 @@
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using Tamagotchi.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Tamagotchi.Controllers
 {
   public class PetsController : Controller
   {
-    [HttpGet("/pets")]
-    public ActionResult Index()
+    private readonly TamagotchiContext _db;
+    public PetsController(TamagotchiContext db)
     {
-      return View(Pet.AllPets);
+      _db = db;
     }
 
-    [HttpGet("/pets/new")]
+    public ActionResult Index()
+    {
+      return View(_db.Pets.ToList());
+    }
+
     public ActionResult Create()
     {
       return View();
     }
 
-    [HttpPost("/pets")]
-    public ActionResult Index(string[] info)
-    {
-      if (info[1] == "delete-pet")
-      {
-        Pet foundPet = Pet.Find(int.Parse(info[0]));
-        Pet.AllPets.Remove(foundPet);
-      }
-      else if (info[0] == "cat")
-      {
-        Cat newCat = new Cat(info[1]);
-      }
-      else if (info[0] == "dog")
-      {
-        Dog newDog = new Dog(info[1]);
-      }
-      else
-      {
-        Small newSmall = new Small(info[1]);
-      }
-      return View(Pet.AllPets);
-    }
+    // [HttpPost]
+    // public ActionResult Index()
+    // {
+    //   return View();
+    // }
     
-    [HttpGet("/pets/{id}")]
-    public ActionResult Show(int id)
+    public ActionResult Details(int id)
     {
-      Pet foundPet = Pet.Find(id);
-      return View(foundPet);
+      return View();
     }
 
-    [HttpPost("/pets/{id}")]
-    public ActionResult Show(int petId, string action)
-    {
-      Pet foundPet = Pet.Find(petId);
-      if (action == "feed")
-      {
-        foundPet.Feed();
-      }
-      else if(action == "play")
-      {
-        foundPet.Play();
-      }
-      else
-      {
-        foundPet.Sleep();
-      }
-      return View(foundPet);
-    }
+    // [HttpPost]
+    // public ActionResult Details(Pet pet)
+    // {
+    //   Pet foundPet = Pet.Find(petId);
+    //   if (action == "feed")
+    //   {
+    //     foundPet.Feed();
+    //   }
+    //   else if(action == "play")
+    //   {
+    //     foundPet.Play();
+    //   }
+    //   else
+    //   {
+    //     foundPet.Sleep();
+    //   }
+    //   return View();
+    // }
 
 
-    [HttpPost("/pets/delete")]
+    [HttpPost]
     public ActionResult DeleteAll()
     {
-      Pet.ClearAll();
       return View();
     }
   }
